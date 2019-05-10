@@ -28,7 +28,6 @@ class Bootstrap implements BootstrapInterface
                 $prefix . '<module:messages>/' => '<module>/messages/index',
                 $prefix . '<module:messages>/<controller>/' => '<module>/<controller>',
                 $prefix . '<module:messages>/<controller>/<action>' => '<module>/<controller>/<action>',
-                $prefix . '<module:messages>/<controller>/<action>' => '<module>/<controller>/<action>',
             ],
             true
         );
