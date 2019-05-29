@@ -20,14 +20,32 @@ class Bootstrap implements BootstrapInterface
         $module = Yii::$app->getModule('messages');
 
         // Get URL path prefix if exist
-        $prefix = (isset($module->routePrefix) ? $module->routePrefix . '/' : '');
+        if (isset($module->routePrefix)) {
+            $app->getUrlManager()->enableStrictParsing = true;
+            $prefix = $module->routePrefix . '/';
+        } else {
+            $prefix = '';
+        }
 
         // Add module URL rules
         $app->getUrlManager()->addRules(
             [
                 $prefix . '<module:messages>/' => '<module>/messages/index',
-                $prefix . '<module:messages>/<controller>/' => '<module>/<controller>',
-                $prefix . '<module:messages>/<controller>/<action>' => '<module>/<controller>/<action>',
+                $prefix . '<module:messages>/<controller:\w+>/' => '<module>/<controller>',
+                $prefix . '<module:messages>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                [
+                    'pattern' => $prefix . '<module:messages>/',
+                    'route' => '<module>/messages/index',
+                    'suffix' => '',
+                ], [
+                    'pattern' => $prefix . '<module:messages>/<controller:\w+>/',
+                    'route' => '<module>/<controller>',
+                    'suffix' => '',
+                ], [
+                    'pattern' => $prefix . '<module:messages>/<controller:\w+>/<action:\w+>',
+                    'route' => '<module>/<controller>/<action>',
+                    'suffix' => '',
+                ],
             ],
             true
         );

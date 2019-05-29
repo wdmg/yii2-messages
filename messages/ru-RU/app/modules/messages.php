@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'Messages' => "Сообщения"
+    'Messages' => "Сообщения",
+    'Private messaging system' => "Система обмена приватными сообщениями",
 ];
 
 ?>
