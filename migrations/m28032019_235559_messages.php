@@ -20,7 +20,7 @@ class m190328_235559_messages extends Migration
 
         $this->createTable('{{%messages}}', [
             'id'=> $this->bigPrimaryKey(20),
-            'sender_id' => $this->integer()->notNull(),
+            'sender_id' => $this->integer()->null(),
             'receiver_id' => $this->integer()->notNull(),
 
             'subject' => $this->string(64)->null(),

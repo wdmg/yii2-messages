@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## 0.0.6 (2019-06-05)
+ * `yii2-users` module set to optionaly
+ 
 ## 0.0.5 (2019-06-05)
  * Module transferred to base module interface. Update Yii2 version.
 
