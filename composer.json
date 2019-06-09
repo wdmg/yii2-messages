@@ -1,10 +1,10 @@
 {
   "name": "wdmg/yii2-messages",
-  "description": "System for sending users private messages for Yii2",
+  "description": "Private messages system",
   "keywords": ["yii2", "yii2-messages", "user messages", "wdmg"],
   "type": "yii2-extension",
   "license": "MIT",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://github.com/wdmg/yii2-messages",
   "support": {
     "source": "https://github.com/wdmg/yii2-messages",
