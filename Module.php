@@ -6,7 +6,7 @@ namespace wdmg\messages;
  * Yii2 Private messages
  *
  * @category        Module
- * @version         0.0.7
+ * @version         0.0.8
  * @author          Alexsander Vyshnyvetskyy <alex.vyshnyvetskyy@gmail.com>
  * @link            https://github.com/wdmg/yii2-messages
  * @copyright       Copyright (c) 2019 W.D.M.Group, Ukraine
@@ -45,12 +45,26 @@ class Module extends BaseModule
     /**
      * @var string the module version
      */
-    private $version = "0.0.7";
+    private $version = "0.0.8";
 
     /**
      * @var integer, priority of initialization
      */
     private $priority = 8;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dashboardNavItems($createLink = false)
+    {
+        $items = [
+            'label' => $this->name,
+            'url' => [$this->routePrefix . '/'. $this->id],
+            'icon' => 'fa-inbox',
+            'active' => in_array(\Yii::$app->controller->module->id, [$this->id])
+        ];
+        return $items;
+    }
 
     public function bootstrap($app)
     {

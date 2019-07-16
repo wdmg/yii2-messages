@@ -4,7 +4,7 @@
   "keywords": ["yii2", "yii2-messages", "user messages", "wdmg"],
   "type": "yii2-extension",
   "license": "MIT",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "https://github.com/wdmg/yii2-messages",
   "support": {
     "source": "https://github.com/wdmg/yii2-messages",
@@ -28,6 +28,11 @@
   "autoload": {
     "psr-4": {
       "wdmg\\messages\\": ""
+    }
+  },
+  "extra": {
+    "options": {
+      "routePrefix": "admin"
     }
   }
 }
