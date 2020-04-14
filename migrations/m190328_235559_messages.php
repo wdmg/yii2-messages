@@ -35,7 +35,12 @@ class m190328_235559_messages extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_messages_user','{{%messages}}', ['sender_id', 'receiver_id'],false);
-        $this->createIndex('idx_messages_text','{{%messages}}', ['subject', 'message(250)'],false);
+
+        if ($this->db->driverName === 'mysql')
+            $this->createIndex('idx_messages_text','{{%messages}}', ['subject', 'message(250)'],false);
+        else
+            $this->createIndex('idx_messages_text','{{%messages}}', ['subject', 'message'],false);
+
         $this->createIndex('idx_messages_status','{{%messages}}', ['status'],false);
         $this->createIndex('idx_messages_session','{{%messages}}', ['session'],false);
 

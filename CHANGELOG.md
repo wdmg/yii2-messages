@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## 0.0.9 (2020-04-14)
+ * Update dependencies
+ * Fixed migrations
+ 
 ## 0.0.8 (2019-07-16)
  * Added extra options to composer.json and navbar menu icon
 
