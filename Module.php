@@ -70,12 +70,13 @@ class Module extends BaseModule
     {
         parent::bootstrap($app);
 
-        $view = Yii::$app->getView();
-        $bundle = \wdmg\messages\MessagesAsset::register($view);
+        if ($this->isBackend() && !$this->isConsole()) {
+            $view = Yii::$app->getView();
+            $bundle = \wdmg\messages\MessagesAsset::register($view);
 
-        $app->view->on($view::EVENT_END_BODY, function () {
+            $app->view->on($view::EVENT_END_BODY, function () {
 
-        echo '<div class="messages-widget panel panel-primary">
+                echo '<div class="messages-widget panel panel-primary">
                 <!--Heading-->
                 <div class="panel-heading">
                     <div class="panel-control">
@@ -230,6 +231,8 @@ class Module extends BaseModule
                 </div>
             </div>';
 
-        });
+            });
+        }
+
     }
 }
