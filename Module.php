@@ -70,7 +70,7 @@ class Module extends BaseModule
     {
         parent::bootstrap($app);
 
-        if ($this->isBackend() && !$this->isConsole()) {
+        if ($this->isBackend() && $this->isConsole()) {
             $view = Yii::$app->getView();
             $bundle = \wdmg\messages\MessagesAsset::register($view);
 
@@ -292,7 +292,7 @@ class Module extends BaseModule
                                             <div class="media-body">
                                                 <div class="message-item">
                                                     <a href="#" class="media-heading">John Doe</a>
-                                                    <p>Thank you for contacting us today</p>
+                                                    <p>Thank you for contacting. Nave nice day!</p>
                                                     <span class="message-time">
                                                         <i class="fa fa-clock fa-fw"></i> 09:23AM
                                                     </span>
