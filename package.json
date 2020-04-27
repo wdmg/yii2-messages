@@ -1,6 +1,6 @@
 {
   "name": "yii2-messages-assets",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Messages Module Assets",
   "main": "Gruntfile.js",
   "scripts": {

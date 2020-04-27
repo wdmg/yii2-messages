@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## 0.0.10 (2020-04-28)
+ * Update README.md and dependencies
+ 
 ## 0.0.9 (2020-04-14)
  * Update dependencies
  * Fixed migrations
