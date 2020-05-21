@@ -70,7 +70,7 @@ class ChatWidget  extends Widget
                                         if ($user['profile']['photo'])
                                             $profile_photo = $user['profile']['photo'];
                                         else
-                                            $profile_photo = $this->_bundle->baseUrl . 'images/default-user.png';
+                                            $profile_photo = $this->_bundle->baseUrl . '/images/default-user.png';
 
                                         $output .= Html::img($profile_photo, [
                                             'class' => "img-circle",
