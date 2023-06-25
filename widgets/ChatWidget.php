@@ -42,7 +42,7 @@ class ChatWidget  extends Widget
                         $output .= '<div class="dialogs-list" tabindex="0">';
 
                         // Render dialogs list
-                        if (is_countable($this->data['messages'])) {
+                        if (is_array($this->data['messages'])) {
                             $output .= '<ul class="list-unstyled media-list">';
 
                             $dialogs = [];
@@ -70,7 +70,7 @@ class ChatWidget  extends Widget
                                         if ($user['profile']['photo'])
                                             $profile_photo = $user['profile']['photo'];
                                         else
-                                            $profile_photo = $this->_bundle->baseUrl . '/images/default-user.png';
+                                            $profile_photo = $this->_bundle->baseUrl . 'images/default-user.png';
 
                                         $output .= Html::img($profile_photo, [
                                             'class' => "img-circle",
@@ -106,6 +106,8 @@ class ChatWidget  extends Widget
                             }
 
                             $output .= '</ul>';
+                        } else {
+	                        $output .= "Select user to start conversation.";
                         }
 
                         $output .= '</div>';
@@ -118,7 +120,7 @@ class ChatWidget  extends Widget
                         $output .= '<div class="messages-list" tabindex="0">';
 
                         // Render messages list
-                        if (is_countable($this->data['messages'])) {
+                        if (is_array($this->data['messages'])) {
                             $output .= '<ul class="list-unstyled media-list">';
 
                             foreach ($this->data['messages'] as $message) {
@@ -164,6 +166,8 @@ class ChatWidget  extends Widget
                             }
 
                             $output .= '</ul>';
+                        } else {
+	                        $output .= "So far there are no messages.";
                         }
 
                         $output .= '</div>';

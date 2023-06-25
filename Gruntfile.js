@@ -1,3 +1,11 @@
+/*!
+ * Main gruntfile for Butterfly.CMS assets
+ * Homepage: https://wdmg.com.ua/
+ * Author: Vyshnyvetskyy Alexsander (alex.vyshyvetskyy@gmail.com)
+ * Copyright 2019 W.D.M.Group, Ukraine
+ * Licensed under MIT
+*/
+
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),

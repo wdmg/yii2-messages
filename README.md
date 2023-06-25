@@ -58,6 +58,7 @@ Use the `Module::dashboardNavItems()` method of the module to generate a navigat
     ?>
 
 # Status and version [in progress development]
+* v.1.0.0 - Update copyrights, fix nav menu
 * v.0.0.10 - Update README.md and dependencies
 * v.0.0.9 - Update dependencies, fixed migrations
 * v.0.0.8 - Added extra options to composer.json and navbar menu icon
